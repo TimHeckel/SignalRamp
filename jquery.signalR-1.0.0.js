@@ -1,4 +1,5 @@
-﻿/* jquery.signalR.core.js */
+﻿
+/* jquery.signalR.core.js */
 /*global window:false */
 /*!
 * SignalR JavaScript Library v1.0.0

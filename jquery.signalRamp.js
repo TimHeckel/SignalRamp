@@ -1,4 +1,9 @@
-﻿(function ($) {
+﻿*
+* Created by Tim Heckel, &copy; 2012 
+* Licensed under the MIT.
+*/
+
+(function ($) {
     var methods = {
         init: function (options) {
             options = options || {};
