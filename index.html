@@ -40,7 +40,13 @@
 
         <h3>Woah. SignalRamp preys on statis. Say what?</h3>
 
-<p>Yay. <strong>SignalR</strong>amp provides the on-ramp for simple, multi-directional syncing of your UI. It uses <a href="https://github.com/SignalR/SignalR">SignalR</a> library along with <a href="https://github.com/TimHeckel/SignalGrr">SignalGrr</a> as a proxy server to wire client UIs together for immediate real-time updating. It's really easy:</p>
+<p>Yay. <strong>SignalR</strong>amp provides the on-ramp for simple, multi-directional syncing of your UI. It uses <a href="https://github.com/SignalR/SignalR">SignalR</a> library along with <a href="https://github.com/TimHeckel/SignalGrr">SignalGrr</a> as a proxy server to wire client UIs together for immediate real-time updating. It's really easy.</p>
+
+<h3>Live Demo</h3>
+
+<p><a href="example.html">Click here</a> to see it in action. (Be sure to open this page in two separate browsers).</p>
+
+<h3>Usage</h3>
 
 <p>Given this HTML:</p>
 
@@ -66,10 +72,22 @@
 
 <pre><code>$("#parent").signalRamp({proxyName: 'someUniqueName'});
 </code></pre>
+
+<p>The <code>proxyName</code> <strong>must</strong> be the same for all the clients that wish to collaborate.</p>
       </section>
 
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-35769235-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
