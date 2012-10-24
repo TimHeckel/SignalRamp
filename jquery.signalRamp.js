@@ -1,4 +1,4 @@
-﻿*
+﻿/*
 * Created by Tim Heckel, &copy; 2012 
 * Licensed under the MIT.
 */
