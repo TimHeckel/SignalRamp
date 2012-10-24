@@ -3,10 +3,13 @@ SignalRamp
 
 jQuery.signalRamp.js is a lightweight jQuery plugin that synchronizes UIs across all subscribed clients. Leveraging [SignalR](https://github.com/SignalR/SignalR) and [SignalGrr](https://github.com/TimHeckel/SignalGrr) as a SignalR proxy server, SignalRamp can quickly turn any segment of your HTML into a live wire for instant synchronization:
 
+You can visit the project's homepage [here](http://timheckel.github.com/SignalRamp/).
+
 Given a snippet of HTML:
 ```
 <div id="holdElements">
     <input type="text" id="txtFirst" />
+</div>
 ```
 
 You can simply call the below to automatically sychronize this data 
