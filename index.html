@@ -75,18 +75,43 @@
                 proxyName: 'uniqueName'
                 , sensibility: 0
                 , callbacks: {
-                    bridgeStarted: function (name) {
+                    bridgeStarted: function (name, bridge) {
+                        //the bridge has started
+                    }
+                    ,
+                    bridgeInitialized: function (bridge, done) {
+                        //the bridge hasn't started yet, so add
+                        //custom proxy events to the bridge here
 
+                        done(); //callback when complete
                     }
                     , valueChanged: function (id, val) {
-
+                        //a value of the wired elements has changed
                     }
                     , checkChanged: function (id, check) {
+                        //the check property of one of the wired elements has changed
+                    }
+                    , uiEventChanged: function (id, type) {
+                        //a mouseover, mouseout, mousedown, mouseup, or click (type) event
+                        //fired on one of the wired elements
+                    }
+                    ,
+                    dataSend: function (pkg, done) {
+                        //prior to a pkg being sent, you can augment
+                        //the pkg call here with server side actions
 
+                        done();
+                    }
+                    ,
+                    dataReceive: function (pkg) {
+                        //data was received, you can check the status
+                        //of an action wired on the dataSend here
+
+                        //TODO: explain what this means!
                     }
                 }
             });
-            
+
             //local event handlers are all that is required
             //when dom elements are decorated with the appropriate
             //signalRamp class, these events will fire across 

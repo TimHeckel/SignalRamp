@@ -1,5 +1,5 @@
 ﻿/*
-* v. 0.0.1
+* v. 0.0.2
 * Created by Tim Heckel, &copy; 2012 
 * Licensed under the MIT.
 */
@@ -49,8 +49,8 @@
                         options.bridge = connection.createProxy(options.proxyName);
 
                         options.bridge.on('receive', function (pkg) {
-                            if (pkg.clientId !== options.clientId)
-                                _self.signalRamp("receive", pkg);
+                            //if (pkg.clientId !== options.clientId) //defaults to others, so this is not explicitly required
+                            _self.signalRamp("receive", pkg);
                         });
 
                         var _start = function () {
@@ -73,14 +73,8 @@
         receive: function (pkg) {
 
             //set stop so propagation stops in case .trigger requeues event
-            var _options = null;
-
-            if ($("#" + pkg.id).data("signalRamp") === "document") {
-                _options = $(document).data("signalRamp").options;
-            } else {
-                _options = $("#" + $("#" + pkg.id).data("signalRamp")).data("signalRamp").options;
-            }
-
+            var _options = utils.options($("#" + pkg.id).data("signalRamp"));
+            
             _options.stop = true;
 
             switch (pkg.type) {
@@ -187,7 +181,7 @@
             if (id === "document") {
                 return $(document).data("signalRamp").options;
             } else {
-                return $("#" + $("#" + id).data("signalRamp")).data("signalRamp").options;
+                return $("#" + id).data("signalRamp").options;
             }
         }
         , _chg: function (e) {
